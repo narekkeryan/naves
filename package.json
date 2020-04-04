@@ -1,0 +1,53 @@
+{
+  "name": "naves",
+  "version": "1.0.0",
+  "description": "Powerful JavaScript utility library.",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "build": "webpack -p && git add ./dist",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "webpack -d --watch",
+    "test": "mocha --recursive ./src/tests",
+    "validate": "npm run lint && npm test"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run build && npm run validate",
+      "post-merge": "npm install"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narekkeryan/naves.git"
+  },
+  "keywords": [
+    "naves",
+    "javascript",
+    "utilities",
+    "modules"
+  ],
+  "author": "Narek Keryan <narek.keryan@gmail.com> (https://nkgdev.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/narekkeryan/naves/issues"
+  },
+  "homepage": "https://github.com/narekkeryan/naves#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "husky": "^4.2.3",
+    "mocha": "^7.1.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
