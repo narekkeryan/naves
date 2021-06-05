@@ -1,7 +1,5 @@
 # naves
 
-[![Build Status](https://travis-ci.org/narekkeryan/naves.svg)](https://travis-ci.org/narekkeryan/naves)
-
 ## Powerful JavaScript Utility Library.
 
 ### Installation
