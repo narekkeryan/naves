@@ -1,5 +1,7 @@
 # naves
 
+![Build Status](https://github.com/narekkeryan/naves/actions/workflows/node.js.yml/badge.svg)
+
 ## Powerful JavaScript Utility Library.
 
 ### Installation
