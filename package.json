@@ -2,13 +2,14 @@
   "name": "naves",
   "version": "1.0.0",
   "description": "Powerful JavaScript utility library.",
-  "main": "./dist/bundle.js",
+  "main": "./dist",
   "scripts": {
-    "build": "webpack --mode='production' && git add ./dist",
+    "build": "rm -rf ./dist/ && npm run build:tsc && git add ./dist",
+    "build:tsc": "tsc --project tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "start": "webpack --mode='development' --watch",
-    "test": "mocha --recursive ./src/tests",
+    "start": "npm run build:tsc -- --watch",
+    "test": "mocha --recursive -r ts-node/register ./src/tests/**/*.ts",
     "validate": "npm run lint && npm test"
   },
   "husky": {
@@ -35,19 +36,17 @@
   },
   "homepage": "https://github.com/narekkeryan/naves#readme",
   "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/preset-env": "^7.14.4",
     "@commitlint/cli": "^13.0.0",
     "@commitlint/config-conventional": "^13.0.0",
-    "babel-loader": "^8.2.2",
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
     "chai": "^4.3.4",
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "eslint": "^7.27.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
     "husky": "^4.3.8",
     "mocha": "^8.4.0",
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0"
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
   }
 }

@@ -3,10 +3,10 @@
  * @param {Function} fn: Base Function
  * @returns {Function}: Memoized Function
  */
-export function memoize(fn) {
+export function memoize(fn: Function) {
   const cache = new Map();
 
-  return (...args) => {
+  return (...args: any[]) => {
     try {
       const key = JSON.stringify(args);
 

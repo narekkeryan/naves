@@ -1,8 +1,8 @@
-const { expect } = require('chai');
+import { expect } from 'chai';
 
-const { memoize } = require('../../dist/bundle');
+import { memoize } from '../';
 
-describe('./utils/memoize.js', () => {
+describe('./utils/memoize.spec.ts', () => {
   it('should return same value as original function', () => {
     const numbers = [12, 25, 144];
     const memoizedMathSqrt = memoize(Math.sqrt);
