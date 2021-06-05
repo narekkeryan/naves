@@ -1,11 +1,19 @@
 {
   "extends": [
     "eslint:recommended",
-    "airbnb-base"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-typescript/base"
   ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2020
+    "ecmaVersion": 2020,
+    "project": "./tsconfig.json",
+    "sourceType": "module"
   },
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "rules": {
     "accessor-pairs": ["error"],
     "comma-dangle": ["error", "always-multiline"],
