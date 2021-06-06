@@ -1,6 +1,6 @@
 {
   "name": "naves",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Powerful JavaScript utility library.",
   "main": "./dist",
   "scripts": {
