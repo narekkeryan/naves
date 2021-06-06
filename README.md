@@ -15,7 +15,7 @@ npm install --save naves
 **memoize**
 
 ```js
-memoize(fn);
+memoize<[T1, T2, ...], R>(fn);
 ```
 
 Creates new function which memoizes the result of `fn`. As a cache key memoization function uses JSON.stringified result of arguments provided to memoized function. If one of arguments include circular reference than memoized function can not cache the result and calculates it in every call.
@@ -25,7 +25,7 @@ import { memoize } from 'naves';
 
 ...
 
-const memoizedFn = memoize(fn);
+const memoizedFn: (...args: T) => R = memoize<[T1, T2, ...], R>(fn);
 
 memoizedFn(...args);
 ```
