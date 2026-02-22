@@ -2,8 +2,8 @@ import { GenericFunction } from '../types';
 
 /**
  * Creates Memoized Function From Base Function
- * @param {Function} fn: Base Function
- * @returns {Function}: Memoized Function
+ * @param {GenericFunction} fn: Base Function
+ * @returns {GenericFunction}: Memoized Function
  */
 export function memoize<T extends unknown[], R>(fn: GenericFunction<T, R>): GenericFunction<T, R> {
   const cache = new Map();
